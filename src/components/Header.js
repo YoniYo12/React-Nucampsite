@@ -13,8 +13,7 @@ const Header=()=>{
                         <img className = 'float-start' src={NucampLogo} alt='nucamp logo' />
                         <h1 className='mt-1'>NuCamp</h1>
                     </NavbarBrand>
-                    <NavbarToggler onClick={()=>setMenuOpen(!menuOpen)}>
-                    </NavbarToggler>
+                    <NavbarToggler onClick={()=>setMenuOpen(!menuOpen)}/>
                     <Collapse  isOpen={menuOpen} navbar>
                         <Nav className='ms-auto' navbar>
                             <NavItem>
