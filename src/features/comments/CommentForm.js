@@ -79,7 +79,7 @@ const CommentForm = ({ campsiteId }) => {
                                 className='form-control'
                             />
                         </FormGroup>
-                        <Button type='submit' color='primary'>
+                        <Button type='submit' color='primary' style={{marginBottom: '15px', marginLeft:'10px'}}>
                             Submit
                         </Button>
                     </Form>
