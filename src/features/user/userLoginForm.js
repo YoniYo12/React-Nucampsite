@@ -68,7 +68,7 @@ const UserLoginForm = ()=>{
                                     Username    
                                 </Label>
                                 <Field 
-                                id='username' name='username' placeholder = 'form-control' className='form-control'
+                                id='username' name='username' placeholder = 'username' className='form-control'
                                 />
                                 <ErrorMessage name='username'>
                                 {(msg) => (
@@ -82,7 +82,7 @@ const UserLoginForm = ()=>{
                                     password
                                 </Label>
                                 <Field 
-                                id='password' name='password' placeholder = 'form-control' className='form-control'
+                                id='password' name='password' placeholder = 'password' className='form-control'
                                 />
                               <ErrorMessage name='password'>
                                 {(msg) => (
