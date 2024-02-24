@@ -4,6 +4,8 @@ import { selectFeaturedPromotion } from '../promotions/promotionsSlice';
 import { selectFeaturedPartner } from '../Partners/partnersSlice';
 import AnimatedDisplayCard from './AnimatedDisplayCard';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
+import Loading from '../../components/Loading';
+import Error from '../../components/Error';
 
 
 const DisplayList = ()=>{
@@ -15,18 +17,23 @@ const DisplayList = ()=>{
     console.log('Display Items:',items)
     return(
         <Row>
-            {
-                items.map((item,idx)=> {
+            {items.map((item, idx) => {
+                    const { featuredItem, isLoading, errMsg } = item;
+                    if (isLoading) {
+                        return <Loading key={idx} />;
+                    }
+                    if (errMsg) {
+                        return <Error errMsg={errMsg} key={idx} />;
+                    }
                     return (
-                        item && (
+                        featuredItem && (
                             <Col md className='m-1' key={idx}>
-                                <AnimatedDisplayCard item={item} />
+                                <AnimatedDisplayCard item={featuredItem} />
                             </Col>
                         )
                     );
-                })
-            }
-        </Row>
+            })}
+         </Row>
     )
 
 }
